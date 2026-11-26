@@ -1,0 +1,988 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markets, everywhere — TradingView</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="4010a22722222011===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'tv-blue': '#2962FF',
+        'bullish': '#089981',
+        'bearish': '#F23645',
+        'promo-coral': '#FF4A4A',
+        'light-primary': '#0049DB',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#2962FF',
+        'light-on-primary-container': '#F7F5FF',
+        'light-secondary': '#006B59',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#E6F5F2',
+        'light-on-secondary-container': '#005143',
+        'light-tertiary': '#9E3500',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#FFF0EB',
+        'light-on-tertiary-container': '#802A00',
+        'light-error': '#BF0127',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FDECEE',
+        'light-on-error-container': '#92001B',
+        'light-background': '#FFFFFF',
+        'light-on-background': '#131722',
+        'light-surface': '#FFFFFF',
+        'light-surface-dim': '#E0E3EB',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F0F3FA',
+        'light-surface-container': '#F8F9FD',
+        'light-surface-container-high': '#E8ECF4',
+        'light-surface-container-highest': '#DFE2F2',
+        'light-on-surface': '#131722',
+        'light-surface-variant': '#F0F3FA',
+        'light-on-surface-variant': '#6A6D78',
+        'light-outline': '#787B86',
+        'light-outline-variant': '#E0E3EB',
+        'light-inverse-surface': '#131722',
+        'light-inverse-on-surface': '#F0F3FA',
+        'light-inverse-primary': '#B6C4FF',
+        'dark-primary': '#B6C4FF',
+        'dark-on-primary': '#002780',
+        'dark-primary-container': '#2962FF',
+        'dark-on-primary-container': '#F7F5FF',
+        'dark-secondary': '#66DABF',
+        'dark-on-secondary': '#00382E',
+        'dark-secondary-container': '#20A28A',
+        'dark-on-secondary-container': '#00211A',
+        'dark-tertiary': '#FFB59A',
+        'dark-on-tertiary': '#5B1B00',
+        'dark-tertiary-container': '#C74500',
+        'dark-on-tertiary-container': '#FFF4F1',
+        'dark-error': '#FFB3B0',
+        'dark-on-error': '#680010',
+        'dark-error-container': '#92001B',
+        'dark-on-error-container': '#FFDAD8',
+        'dark-background': '#131722',
+        'dark-on-background': '#D1D4DC',
+        'dark-surface': '#131722',
+        'dark-surface-dim': '#0C0F18',
+        'dark-surface-bright': '#2A2E39',
+        'dark-surface-container-lowest': '#0A0E19',
+        'dark-surface-container-low': '#1E222D',
+        'dark-surface-container': '#232734',
+        'dark-surface-container-high': '#2A2E39',
+        'dark-surface-container-highest': '#363A45',
+        'dark-on-surface': '#D1D4DC',
+        'dark-surface-variant': '#2A2E39',
+        'dark-on-surface-variant': '#9598A1',
+        'dark-outline': '#787B86',
+        'dark-outline-variant': '#2A2E39',
+        'dark-inverse-surface': '#F0F3FA',
+        'dark-inverse-on-surface': '#131722',
+        'dark-inverse-primary': '#004EE8',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '12px',
+        'gutter-lg': '16px',
+        'gutter-xl': '24px',
+        'section': '48px',
+        'page-margin': '32px',
+      },
+      fontFamily: {
+        'display': ['"Afacad Flux"', 'sans-serif'],
+        'headline': ['"Afacad Flux"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Spline Sans Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-1.0px', fontWeight: '700' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '34px', letterSpacing: '-0.3px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'mono-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '100ms',
+        'surface-enter': '180ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Spline+Sans+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-screen flex flex-col bg-light-surface">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-30 bg-light-surface border-b border-light-outline-variant">
+      <div class="max-w-[1360px] mx-auto px-page-margin h-16 flex items-center justify-between gap-gutter-lg">
+        <!-- Left: Brand + Search + Primary Nav -->
+        <div class="flex items-center gap-gutter-xl">
+          <a href="#top" class="inline-flex items-center gap-gutter-sm text-light-on-surface shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tv-blue rounded-sm">
+            <svg width="32" height="20" viewBox="0 0 36 28" fill="none" aria-hidden="true">
+              <path d="M14 22H7V11H0V4H14V22Z" fill="currentColor"></path>
+              <path d="M22.5 22H15.5L23.5 4H30.5L22.5 22Z" fill="currentColor"></path>
+              <circle cx="31.5" cy="8.5" r="3.5" fill="currentColor"></circle>
+            </svg>
+            <span data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface tracking-tight">TradingView</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-gutter-sm px-gutter-md py-gutter-sm rounded-full bg-light-surface-container-low text-light-on-surface-variant w-56 cursor-pointer hover:bg-light-surface-container-high transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">search</span>
+            <span data-design-text-token="body-sm" class="font-body text-body-sm">Search (Ctrl+K)</span>
+          </div>
+
+          <nav aria-label="Primary" class="hidden lg:flex items-center gap-gutter-xl">
+            <a href="#products" data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface hover:text-tv-blue transition-colors duration-state-change">Products</a>
+            <a href="#community" data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface hover:text-tv-blue transition-colors duration-state-change">Community</a>
+            <a href="#markets" data-design-text-token="label-lg" class="font-label text-label-lg text-tv-blue">Markets</a>
+            <a href="#brokers" data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface hover:text-tv-blue transition-colors duration-state-change">Brokers</a>
+            <a href="#more" data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface hover:text-tv-blue transition-colors duration-state-change">More</a>
+          </nav>
+        </div>
+
+        <!-- Right: Locale, Account, Promo CTA -->
+        <div class="flex items-center gap-gutter-md">
+          <!-- COMPONENT: button-with-icon -->
+          <button data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" type="button" class="inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-xs rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change ease-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tv-blue">
+            <span class="material-symbols-outlined text-title-md text-light-on-surface-variant" aria-hidden="true">language</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">EN</span>
+          </button>
+
+          <!-- COMPONENT: button-icon -->
+          <button data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Account profile" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change ease-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tv-blue">
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">person</span>
+          </button>
+
+          <!-- COMPONENT: button-primary -->
+          <button data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="button" class="hidden sm:inline-flex flex-col items-center justify-center px-gutter-lg py-gutter-xs rounded-full bg-light-error text-light-on-error hover:opacity-90 transition-opacity duration-state-change ease-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tv-blue">
+            <span data-design-text-token="label-md" class="font-label text-label-md leading-tight">Black Friday</span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm leading-tight">Up to 80% OFF</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="top" class="flex-1 w-full max-w-[1360px] mx-auto px-page-margin py-section flex flex-col gap-section">
+
+      <!-- Page Hero -->
+      <section class="flex justify-center pt-gutter-md pb-gutter-sm">
+        <button type="button" class="inline-flex items-center gap-gutter-sm text-light-on-surface hover:text-tv-blue transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tv-blue rounded-md px-gutter-sm">
+          <h1 data-design-text-token="display-lg" class="font-display text-display-lg-mobile md:text-display-lg text-light-on-surface">Markets, everywhere</h1>
+          <span class="material-symbols-outlined text-headline-lg text-light-on-surface" aria-hidden="true">keyboard_arrow_down</span>
+        </button>
+      </section>
+
+      <!-- Section 1: Indices -->
+      <section aria-labelledby="heading-indices" class="flex flex-col gap-gutter-xl">
+        <div class="flex items-center justify-between">
+          <a href="#indices" class="inline-flex items-center gap-gutter-xs group">
+            <h2 id="heading-indices" data-design-text-token="headline-lg" class="font-headline text-headline-lg text-light-on-surface group-hover:text-tv-blue transition-colors">Indices</h2>
+            <span class="material-symbols-outlined text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+          </a>
+        </div>
+
+        <!-- Index Pill Selector + Interactive Chart -->
+        <div data-component-id="tabs-with-icon" data-component-type="tabs" data-component-variant="with-icon" class="flex flex-col gap-gutter-xl">
+          <div role="tablist" aria-label="Major indices" class="flex items-center gap-gutter-md overflow-x-auto pb-gutter-xs">
+            <button role="tab" aria-selected="true" data-index="sp500" class="index-tab inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface-container-low text-light-on-surface shrink-0 transition-colors duration-state-change">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-error text-light-on-error font-mono text-mono-sm" aria-hidden="true">500</span>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">S&amp;P 500</span>
+            </button>
+            <button role="tab" aria-selected="false" data-index="ndx" class="index-tab inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors duration-state-change">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm" aria-hidden="true">100</span>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Nasdaq 100</span>
+            </button>
+            <button role="tab" aria-selected="false" data-index="dow" class="index-tab inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors duration-state-change">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-primary-container text-light-on-primary font-mono text-mono-sm" aria-hidden="true">30</span>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Dow 30</span>
+            </button>
+            <button role="tab" aria-selected="false" data-index="rut" class="index-tab inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors duration-state-change">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-error text-light-on-error font-mono text-mono-sm" aria-hidden="true">2K</span>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">US 2000 small cap</span>
+            </button>
+            <button role="tab" aria-selected="false" data-index="ixic" class="index-tab inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors duration-state-change">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-inverse-surface text-light-inverse-on-surface font-mono text-mono-sm" aria-hidden="true">IX</span>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Nasdaq Composite</span>
+            </button>
+            <button role="tab" aria-selected="false" data-index="nya" class="index-tab inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors duration-state-change">
+              <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-secondary text-light-on-secondary font-mono text-mono-sm" aria-hidden="true">NY</span>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">NYSE Composite</span>
+            </button>
+          </div>
+
+          <!-- Index Chart Panel -->
+          <div role="tabpanel" class="rounded-md border border-light-outline-variant bg-light-surface p-gutter-xl flex flex-col gap-gutter-lg">
+            <div class="flex flex-wrap items-baseline justify-between gap-gutter-md">
+              <div class="flex items-baseline gap-gutter-md">
+                <span id="chart-symbol-name" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">S&amp;P 500 Index</span>
+                <span id="chart-price" data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface tabular-nums">5,987.42</span>
+                <span id="chart-delta" data-design-text-token="label-lg" class="font-label text-label-lg text-light-secondary tabular-nums">+40.42 (+0.68%)</span>
+              </div>
+              <div class="flex items-center gap-gutter-xs">
+                <button type="button" class="px-gutter-sm py-gutter-xs rounded-sm bg-light-surface-container-low text-light-on-surface font-label text-label-md">1D</button>
+                <button type="button" class="px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:bg-light-surface-container font-label text-label-md">5D</button>
+                <button type="button" class="px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:bg-light-surface-container font-label text-label-md">1M</button>
+                <button type="button" class="px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:bg-light-surface-container font-label text-label-md">6M</button>
+                <button type="button" class="px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:bg-light-surface-container font-label text-label-md">YTD</button>
+                <button type="button" class="px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:bg-light-surface-container font-label text-label-md">1Y</button>
+                <button type="button" class="px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:bg-light-surface-container font-label text-label-md">5Y</button>
+              </div>
+            </div>
+
+            <!-- Crisp SVG Area Chart -->
+            <div class="w-full h-52">
+              <svg viewBox="0 0 1200 200" preserveAspectRatio="none" class="w-full h-full" aria-label="S&amp;P 500 intraday price chart">
+                <defs>
+                  <linearGradient id="tvAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#089981" stop-opacity="0.18"></stop>
+                    <stop offset="100%" stop-color="#089981" stop-opacity="0.0"></stop>
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="45" x2="1200" y2="45" stroke="#E0E3EB" stroke-dasharray="4 4" stroke-width="1"></line>
+                <line x1="0" y1="100" x2="1200" y2="100" stroke="#E0E3EB" stroke-dasharray="4 4" stroke-width="1"></line>
+                <line x1="0" y1="155" x2="1200" y2="155" stroke="#E0E3EB" stroke-dasharray="4 4" stroke-width="1"></line>
+                <path d="M0,148 L75,140 L150,144 L225,126 L300,130 L375,112 L450,118 L525,95 L600,102 L675,84 L750,90 L825,72 L900,78 L975,58 L1050,64 L1125,42 L1200,34 L1200,200 L0,200 Z" fill="url(#tvAreaGrad)"></path>
+                <path id="chart-line-path" d="M0,148 L75,140 L150,144 L225,126 L300,130 L375,112 L450,118 L525,95 L600,102 L675,84 L750,90 L825,72 L900,78 L975,58 L1050,64 L1125,42 L1200,34" fill="none" stroke="#089981" stroke-width="2.5" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- World Indices Sub-section -->
+        <div class="flex flex-col gap-gutter-lg pt-gutter-sm">
+          <a href="#world-indices" class="inline-flex items-center gap-gutter-xs group w-fit">
+            <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors">World indices</h3>
+            <span class="material-symbols-outlined text-title-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+          </a>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter-lg items-stretch">
+            <!-- COMPONENT: card-elevated -->
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm shrink-0">225</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">NI225</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">Japan 225 Index</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">38,452.10</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+1.24%</span>
+              </div>
+            </article>
+
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-primary-container text-light-on-primary font-mono text-mono-sm shrink-0">100</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">UKX</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">FTSE 100 Index</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">8,294.60</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+0.41%</span>
+              </div>
+            </article>
+
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm shrink-0">DAX</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">DAX</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">DAX Index</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">19,405.20</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-error tabular-nums">−0.18%</span>
+              </div>
+            </article>
+
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-secondary text-light-on-secondary font-mono text-mono-sm shrink-0">40</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">PX1</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">CAC 40 Index</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">7,254.90</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+0.62%</span>
+              </div>
+            </article>
+
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-error text-light-on-error font-mono text-mono-sm shrink-0">MIB</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">FTMIB</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">Milano Italia Borsa Index</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">33,180.45</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-error tabular-nums">−0.34%</span>
+              </div>
+            </article>
+          </div>
+
+          <a href="#all-indices" data-design-text-token="label-lg" class="inline-flex items-center gap-gutter-xs font-label text-label-lg text-tv-blue hover:underline w-fit">
+            <span>See all major indices</span>
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">chevron_right</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 2: US Stocks -->
+      <section aria-labelledby="heading-us-stocks" class="flex flex-col gap-gutter-xl">
+        <a href="#us-stocks" class="inline-flex items-center gap-gutter-sm group w-fit">
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm" aria-hidden="true">US</span>
+          <h2 id="heading-us-stocks" data-design-text-token="headline-lg" class="font-headline text-headline-lg text-light-on-surface group-hover:text-tv-blue transition-colors">US stocks</h2>
+          <span class="material-symbols-outlined text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+        </a>
+
+        <!-- US Stock Pill Selector -->
+        <div class="flex items-center gap-gutter-md overflow-x-auto pb-gutter-xs">
+          <button type="button" class="inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface-container-low text-light-on-surface shrink-0">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-secondary text-light-on-secondary font-mono text-mono-sm">NV</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">NVIDIA</span>
+          </button>
+          <button type="button" class="inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-inverse-surface text-light-inverse-on-surface font-mono text-mono-sm">AA</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Apple</span>
+          </button>
+          <button type="button" class="inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-tertiary text-light-on-tertiary font-mono text-mono-sm">AZ</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Amazon</span>
+          </button>
+          <button type="button" class="inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-surface-container-low text-light-primary font-mono text-mono-sm">G</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Alphabet</span>
+          </button>
+          <button type="button" class="inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-error text-light-on-error font-mono text-mono-sm">T</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Tesla</span>
+          </button>
+          <button type="button" class="inline-flex items-center gap-gutter-md px-gutter-lg py-gutter-sm rounded-full bg-light-surface text-light-on-surface hover:bg-light-surface-container shrink-0 transition-colors">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm">MS</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Microsoft</span>
+          </button>
+        </div>
+
+        <!-- Community Trends -->
+        <div class="flex flex-col gap-gutter-lg">
+          <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">Community trends</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter-lg items-stretch">
+            <a href="#abvx" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-secondary-container text-light-on-secondary-container font-mono text-mono-sm shrink-0">AB</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">ABVX</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">Abivax SA</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">12.40 USD</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+4.82%</span>
+              </div>
+            </a>
+
+            <a href="#adxn" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-surface-container-low text-light-primary font-mono text-mono-sm shrink-0">AD</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">ADXN</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">Addex Therapeutics Ltd</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">8.15 USD</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+3.16%</span>
+              </div>
+            </a>
+
+            <a href="#amd" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-inverse-surface text-light-inverse-on-surface font-mono text-mono-sm shrink-0">AM</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">AMD</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">Advanced Micro Devices</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">142.88 USD</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+1.94%</span>
+              </div>
+            </a>
+
+            <a href="#amzn" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-tertiary text-light-on-tertiary font-mono text-mono-sm shrink-0">AZ</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">AMZN</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">Amazon.com, Inc.</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">207.42 USD</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+0.88%</span>
+              </div>
+            </a>
+
+            <a href="#ant" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="h-full rounded-md border border-light-outline-variant bg-light-surface p-gutter-lg flex flex-col justify-between gap-gutter-lg hover:bg-light-surface-container transition-colors">
+              <header class="flex items-center gap-gutter-md">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-surface-container-low text-light-on-surface font-mono text-mono-sm shrink-0">AI</span>
+                <div class="min-w-0">
+                  <h4 data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">ANT</h4>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant truncate">Anthropic, PBC</p>
+                </div>
+              </header>
+              <div class="flex items-baseline justify-between gap-gutter-sm">
+                <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tabular-nums">64.10 USD</span>
+                <span data-design-text-token="label-md" class="font-label text-label-md text-light-secondary tabular-nums">+5.40%</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Highest Volume & Most Volatile (2-column split) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-xl pt-gutter-sm">
+          <!-- Highest Volume Stocks -->
+          <div class="flex flex-col gap-gutter-lg">
+            <a href="#volume" class="inline-flex items-center gap-gutter-xs group w-fit">
+              <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors">Highest volume stocks</h3>
+              <span class="material-symbols-outlined text-title-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+            </a>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-gutter-xl divide-y divide-light-outline-variant">
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-secondary text-light-on-secondary font-mono text-mono-sm shrink-0">NV</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">NVIDIA Corporation</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">NVDA</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">146.27</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+2.18%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm shrink-0">MU</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Micron Technology, Inc.</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">MU</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">104.50</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+3.45%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-surface-container-low text-light-on-surface font-mono text-mono-sm shrink-0">AI</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Anthropic, PBC Class A</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">ANT</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">64.10</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+5.40%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-inverse-surface text-light-inverse-on-surface font-mono text-mono-sm shrink-0">AM</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Advanced Micro Devices</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">AMD</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">142.88</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+1.94%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-inverse-surface text-light-inverse-on-surface font-mono text-mono-sm shrink-0">AA</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Apple Inc.</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">AAPL</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">234.80</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-error">−0.42%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-inverse-surface text-light-inverse-on-surface font-mono text-mono-sm shrink-0">SX</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Space Exploration Tech</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">SPCX</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">189.15</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+2.64%</div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#all-active" data-design-text-token="label-lg" class="inline-flex items-center gap-gutter-xs font-label text-label-lg text-tv-blue hover:underline w-fit">
+              <span>See all most actively traded stocks</span>
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+
+          <!-- Most Volatile Stocks -->
+          <div class="flex flex-col gap-gutter-lg">
+            <a href="#volatile" class="inline-flex items-center gap-gutter-xs group w-fit">
+              <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors">Most volatile stocks</h3>
+              <span class="material-symbols-outlined text-title-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+            </a>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-gutter-xl divide-y divide-light-outline-variant">
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-error-container text-light-on-error-container font-mono text-mono-sm shrink-0">HC</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Healthcare Triangle, Inc.</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">HCTI</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">1.84</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+18.71%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-secondary-container text-light-on-secondary-container font-mono text-mono-sm shrink-0">RM</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Passage Bio, Inc.</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">RMTX</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">4.92</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-error">−11.20%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-surface-container-low text-light-primary font-mono text-mono-sm shrink-0">VW</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">VisionWave Holdings, Inc.</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">VWAV</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">6.38</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+14.55%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-surface-container-high text-light-on-surface font-mono text-mono-sm shrink-0">TP</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">Toppoint Holdings Inc.</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">TOPP</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">3.12</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-error">−8.94%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-surface-container-low text-light-on-surface font-mono text-mono-sm shrink-0">ST</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">STAK Inc.</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">STAK</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">2.75</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+12.10%</div>
+                </div>
+              </div>
+
+              <div class="py-gutter-md flex items-center justify-between gap-gutter-md">
+                <div class="flex items-center gap-gutter-md min-w-0">
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-light-tertiary-container text-light-on-tertiary-container font-mono text-mono-sm shrink-0">BG</span>
+                  <div class="min-w-0">
+                    <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface truncate">BioNexus Gene Lab Corp</div>
+                    <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">BGLC</span>
+                  </div>
+                </div>
+                <div class="text-right tabular-nums shrink-0">
+                  <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">5.40</div>
+                  <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+9.82%</div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#all-volatile" data-design-text-token="label-lg" class="inline-flex items-center gap-gutter-xs font-label text-label-lg text-tv-blue hover:underline w-fit">
+              <span>See all stocks with biggest price changes</span>
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Stock Gainers & Stock Losers -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-xl pt-gutter-sm">
+          <!-- Stock Gainers -->
+          <div class="flex flex-col gap-gutter-lg">
+            <a href="#gainers" class="inline-flex items-center gap-gutter-xs group w-fit">
+              <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors">Stock gainers</h3>
+              <span class="material-symbols-outlined text-title-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+            </a>
+
+            <!-- COMPONENT: tabs-horizontal -->
+            <div data-component-id="tabs-horizontal" data-component-type="tabs" data-component-variant="horizontal" class="flex flex-col gap-gutter-md">
+              <div role="tablist" aria-label="Gainers session" class="inline-flex items-center gap-gutter-xs">
+                <button role="tab" aria-selected="true" class="px-gutter-md py-gutter-xs rounded-sm bg-light-surface-container-low text-light-on-surface">
+                  <span data-design-text-token="label-lg" class="font-label text-label-lg">Regular hours</span>
+                </button>
+                <button role="tab" aria-selected="false" class="px-gutter-md py-gutter-xs rounded-sm bg-light-surface text-light-on-surface-variant hover:bg-light-surface-container">
+                  <span data-design-text-token="label-lg" class="font-label text-label-lg">Pre-market</span>
+                </button>
+              </div>
+            </div>
+
+            <a href="#all-gainers" data-design-text-token="label-lg" class="inline-flex items-center gap-gutter-xs font-label text-label-lg text-tv-blue hover:underline w-fit">
+              <span>See all stocks with largest daily growth</span>
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+
+          <!-- Stock Losers -->
+          <div class="flex flex-col gap-gutter-lg">
+            <a href="#losers" class="inline-flex items-center gap-gutter-xs group w-fit">
+              <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors">Stock losers</h3>
+              <span class="material-symbols-outlined text-title-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+            </a>
+
+            <div data-component-id="tabs-horizontal" data-component-type="tabs" data-component-variant="horizontal" class="flex flex-col gap-gutter-md">
+              <div role="tablist" aria-label="Losers session" class="inline-flex items-center gap-gutter-xs">
+                <button role="tab" aria-selected="true" class="px-gutter-md py-gutter-xs rounded-sm bg-light-surface-container-low text-light-on-surface">
+                  <span data-design-text-token="label-lg" class="font-label text-label-lg">Regular hours</span>
+                </button>
+                <button role="tab" aria-selected="false" class="px-gutter-md py-gutter-xs rounded-sm bg-light-surface text-light-on-surface-variant hover:bg-light-surface-container">
+                  <span data-design-text-token="label-lg" class="font-label text-label-lg">Pre-market</span>
+                </button>
+              </div>
+            </div>
+
+            <a href="#all-losers" data-design-text-token="label-lg" class="inline-flex items-center gap-gutter-xs font-label text-label-lg text-tv-blue hover:underline w-fit">
+              <span>See all stocks with largest daily drop</span>
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: World Stocks (Tables) -->
+      <section aria-labelledby="heading-world-stocks" class="flex flex-col gap-gutter-xl">
+        <a href="#world-stocks" class="inline-flex items-center gap-gutter-xs group w-fit">
+          <h2 id="heading-world-stocks" data-design-text-token="headline-lg" class="font-headline text-headline-lg text-light-on-surface group-hover:text-tv-blue transition-colors">World stocks</h2>
+          <span class="material-symbols-outlined text-headline-md text-light-on-surface group-hover:text-tv-blue transition-colors" aria-hidden="true">chevron_right</span>
+        </a>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-xl">
+          <!-- World Biggest Companies -->
+          <div class="flex flex-col gap-gutter-lg">
+            <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">World biggest companies</h3>
+            <!-- COMPONENT: table-standard -->
+            <div data-component-id="table-standard" data-component-type="table" data-component-variant="standard" class="w-full overflow-x-auto">
+              <table class="w-full border-collapse text-left">
+                <thead>
+                  <tr class="border-b border-light-outline-variant">
+                    <th scope="col" class="py-gutter-sm pr-gutter-md font-label text-label-sm uppercase text-light-on-surface-variant"><span data-design-text-token="label-sm">Symbol</span></th>
+                    <th scope="col" class="py-gutter-sm px-gutter-md text-right font-label text-label-sm uppercase text-light-on-surface-variant"><span data-design-text-token="label-sm">Price &amp; Chg</span></th>
+                    <th scope="col" class="py-gutter-sm pl-gutter-md text-right font-label text-label-sm uppercase text-light-on-surface-variant"><span data-design-text-token="label-sm">Market Cap</span></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-light-outline-variant">
+                  <tr class="hover:bg-light-surface-container transition-colors">
+                    <td class="py-gutter-md pr-gutter-md">
+                      <div class="flex items-center gap-gutter-md">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-inverse-surface text-light-inverse-on-surface font-mono text-mono-sm shrink-0">AA</span>
+                        <div>
+                          <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">Apple Inc.</div>
+                          <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">AAPL</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-gutter-md px-gutter-md text-right tabular-nums">
+                      <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">234.80</div>
+                      <div data-design-text-token="label-md" class="font-label text-label-md text-light-error">−0.42%</div>
+                    </td>
+                    <td class="py-gutter-md pl-gutter-md text-right tabular-nums">
+                      <span data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">5.17 T USD</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-light-surface-container transition-colors">
+                    <td class="py-gutter-md pr-gutter-md">
+                      <div class="flex items-center gap-gutter-md">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm shrink-0">MS</span>
+                        <div>
+                          <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">Microsoft Corporation</div>
+                          <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">MSFT</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-gutter-md px-gutter-md text-right tabular-nums">
+                      <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">428.15</div>
+                      <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+0.95%</div>
+                    </td>
+                    <td class="py-gutter-md pl-gutter-md text-right tabular-nums">
+                      <span data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">3.64 T USD</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-light-surface-container transition-colors">
+                    <td class="py-gutter-md pr-gutter-md">
+                      <div class="flex items-center gap-gutter-md">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-secondary text-light-on-secondary font-mono text-mono-sm shrink-0">NV</span>
+                        <div>
+                          <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">NVIDIA Corporation</div>
+                          <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">NVDA</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-gutter-md px-gutter-md text-right tabular-nums">
+                      <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">146.27</div>
+                      <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+2.18%</div>
+                    </td>
+                    <td class="py-gutter-md pl-gutter-md text-right tabular-nums">
+                      <span data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">3.60 T USD</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a href="#all-companies" data-design-text-token="label-lg" class="inline-flex items-center gap-gutter-xs font-label text-label-lg text-tv-blue hover:underline w-fit">
+              <span>See all world major companies</span>
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+
+          <!-- Crypto Market Cap Ranking -->
+          <div class="flex flex-col gap-gutter-lg">
+            <h3 data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">Crypto market cap ranking</h3>
+            <div data-component-id="table-standard" data-component-type="table" data-component-variant="standard" class="w-full overflow-x-auto">
+              <table class="w-full border-collapse text-left">
+                <thead>
+                  <tr class="border-b border-light-outline-variant">
+                    <th scope="col" class="py-gutter-sm pr-gutter-md font-label text-label-sm uppercase text-light-on-surface-variant"><span data-design-text-token="label-sm">Symbol</span></th>
+                    <th scope="col" class="py-gutter-sm px-gutter-md text-right font-label text-label-sm uppercase text-light-on-surface-variant"><span data-design-text-token="label-sm">Price &amp; Chg</span></th>
+                    <th scope="col" class="py-gutter-sm pl-gutter-md text-right font-label text-label-sm uppercase text-light-on-surface-variant"><span data-design-text-token="label-sm">Market Cap</span></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-light-outline-variant">
+                  <tr class="hover:bg-light-surface-container transition-colors">
+                    <td class="py-gutter-md pr-gutter-md">
+                      <div class="flex items-center gap-gutter-md">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-tertiary text-light-on-tertiary font-mono text-mono-sm shrink-0">BT</span>
+                        <div>
+                          <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">Bitcoin</div>
+                          <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">BTCUSD</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-gutter-md px-gutter-md text-right tabular-nums">
+                      <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">94,612.00</div>
+                      <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+1.84%</div>
+                    </td>
+                    <td class="py-gutter-md pl-gutter-md text-right tabular-nums">
+                      <span data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">1.87 T USD</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-light-surface-container transition-colors">
+                    <td class="py-gutter-md pr-gutter-md">
+                      <div class="flex items-center gap-gutter-md">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-primary text-light-on-primary font-mono text-mono-sm shrink-0">ET</span>
+                        <div>
+                          <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">Ethereum</div>
+                          <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">ETHUSD</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-gutter-md px-gutter-md text-right tabular-nums">
+                      <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">3,342.80</div>
+                      <div data-design-text-token="label-md" class="font-label text-label-md text-light-secondary">+2.45%</div>
+                    </td>
+                    <td class="py-gutter-md pl-gutter-md text-right tabular-nums">
+                      <span data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">402.18 B USD</span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-light-surface-container transition-colors">
+                    <td class="py-gutter-md pr-gutter-md">
+                      <div class="flex items-center gap-gutter-md">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-light-secondary text-light-on-secondary font-mono text-mono-sm shrink-0">US</span>
+                        <div>
+                          <div data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface">Tether USDt</div>
+                          <span data-design-text-token="mono-sm" class="inline-block px-gutter-xs rounded-sm bg-light-surface-container-low font-mono text-mono-sm text-light-on-surface-variant">USDTUSD</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-gutter-md px-gutter-md text-right tabular-nums">
+                      <div data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface">1.0001</div>
+                      <div data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface-variant">0.00%</div>
+                    </td>
+                    <td class="py-gutter-md pl-gutter-md text-right tabular-nums">
+                      <span data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface">173.79 B USD</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a href="#all-coins" data-design-text-token="label-lg" class="inline-flex items-center gap-gutter-xs font-label text-label-lg text-tv-blue hover:underline w-fit">
+              <span>See all coins</span>
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-light-outline-variant bg-light-surface mt-section">
+      <div class="max-w-[1360px] mx-auto px-page-margin py-section flex flex-col gap-gutter-xl">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-gutter-xl">
+          <div class="col-span-2 md:col-span-1 flex flex-col gap-gutter-md">
+            <span data-design-text-token="headline-md" class="font-headline text-headline-md text-light-on-surface">TradingView</span>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">Look first / Then leap.</p>
+          </div>
+          <div class="flex flex-col gap-gutter-sm">
+            <h4 data-design-text-token="label-md" class="font-label text-label-md uppercase text-light-on-surface-variant">More Than A Product</h4>
+            <a href="#supercharts" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Supercharts</a>
+            <a href="#screeners" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Screeners</a>
+            <a href="#heatmaps" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Heatmaps</a>
+            <a href="#calendars" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Economic Calendar</a>
+          </div>
+          <div class="flex flex-col gap-gutter-sm">
+            <h4 data-design-text-token="label-md" class="font-label text-label-md uppercase text-light-on-surface-variant">About Company</h4>
+            <a href="#about" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Who we are</a>
+            <a href="#blog" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Blog</a>
+            <a href="#careers" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Careers</a>
+          </div>
+          <div class="flex flex-col gap-gutter-sm">
+            <h4 data-design-text-token="label-md" class="font-label text-label-md uppercase text-light-on-surface-variant">Community</h4>
+            <a href="#social" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Social network</a>
+            <a href="#ideas" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Trading ideas</a>
+            <a href="#pine" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Pine Script</a>
+          </div>
+          <div class="flex flex-col gap-gutter-sm">
+            <h4 data-design-text-token="label-md" class="font-label text-label-md uppercase text-light-on-surface-variant">Business Solutions</h4>
+            <a href="#widgets" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Widgets</a>
+            <a href="#charts" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Charting libraries</a>
+            <a href="#lightweight" class="font-body text-body-sm text-light-on-surface hover:text-tv-blue">Lightweight Charts</a>
+          </div>
+        </div>
+        <div class="pt-gutter-lg border-t border-light-outline-variant flex flex-wrap items-center justify-between gap-gutter-md">
+          <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">Market data provided by ICE Data Services &amp; FactSet. © 2026 TradingView, Inc.</span>
+          <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface-variant">English</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const indexData = {
+        sp500: { name: 'S&P 500 Index', price: '5,987.42', delta: '+40.42 (+0.68%)', positive: true, path: 'M0,148 L75,140 L150,144 L225,126 L300,130 L375,112 L450,118 L525,95 L600,102 L675,84 L750,90 L825,72 L900,78 L975,58 L1050,64 L1125,42 L1200,34' },
+        ndx: { name: 'Nasdaq 100 Index', price: '20,912.60', delta: '+184.15 (+0.89%)', positive: true, path: 'M0,160 L100,145 L200,152 L300,120 L400,126 L500,98 L600,104 L700,76 L800,82 L900,56 L1000,62 L1100,40 L1200,28' },
+        dow: { name: 'Dow 30 Index', price: '44,722.06', delta: '−128.40 (−0.29%)', positive: false, path: 'M0,60 L150,74 L300,68 L450,90 L600,85 L750,112 L900,108 L1050,132 L1200,142' },
+        rut: { name: 'US 2000 Small Cap', price: '2,418.90', delta: '+19.30 (+0.80%)', positive: true, path: 'M0,150 L200,136 L400,140 L600,110 L800,114 L1000,74 L1200,52' },
+        ixic: { name: 'Nasdaq Composite', price: '19,060.48', delta: '+112.80 (+0.60%)', positive: true, path: 'M0,142 L200,128 L400,134 L600,102 L800,96 L1000,68 L1200,48' },
+        nya: { name: 'NYSE Composite', price: '20,115.20', delta: '+54.10 (+0.27%)', positive: true, path: 'M0,130 L200,122 L400,126 L600,108 L800,102 L1000,88 L1200,76' }
+      };
+
+      const tabs = document.querySelectorAll('.index-tab');
+      const nameEl = document.getElementById('chart-symbol-name');
+      const priceEl = document.getElementById('chart-price');
+      const deltaEl = document.getElementById('chart-delta');
+      const pathEl = document.getElementById('chart-line-path');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) {
+            t.setAttribute('aria-selected', 'false');
+            t.classList.remove('bg-light-surface-container-low');
+            t.classList.add('bg-light-surface');
+          });
+          tab.setAttribute('aria-selected', 'true');
+          tab.classList.remove('bg-light-surface');
+          tab.classList.add('bg-light-surface-container-low');
+
+          const key = tab.getAttribute('data-index');
+          const d = indexData[key];
+          if (d) {
+            nameEl.textContent = d.name;
+            priceEl.textContent = d.price;
+            deltaEl.textContent = d.delta;
+            deltaEl.className = 'font-label text-label-lg tabular-nums ' + (d.positive ? 'text-light-secondary' : 'text-light-error');
+            pathEl.setAttribute('d', d.path);
+            pathEl.setAttribute('stroke', d.positive ? '#089981' : '#F23645');
+          }
+        });
+      });
+    })();
+  </script>
+
+
+</body></html>

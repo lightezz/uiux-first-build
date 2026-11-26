@@ -1,0 +1,6 @@
+{
+  "name": "TradingView Markets",
+  "description": "Markets, everywhere — interactive global indices, US stocks, community trends, world companies, and crypto rankings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
